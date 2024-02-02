@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="shortcut icon" href="rose_logo.png" type="image/png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Think again</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Nunito&display=swap');
+
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            margin: 0;
+            text-align: center;
+            font-family: 'Nunito', sans-serif;
+            background-image: url('bg.webp');
+            background-size: cover;
+            color: #FE019A;
+        }
+
+        #cat-image {
+            max-width: 100%;
+            height: auto;
+        }
+
+        #message {
+            margin-top: 20px;
+            font-size: 31px;
+            font-weight: bold;
+        }
+
+        #options {
+            margin-top: 20px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 10px 15px;
+            font-size: 15px;
+            cursor: pointer;
+            text-align: center;
+            text-decoration: none;
+            outline: none;
+            border: none;
+            border-radius: 5px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+            margin: 0 10px;
+        }
+
+        .btn-no {
+            background-color: #d6248f;
+            color: #fff;
+        }
+
+        .btn-yes {
+            background-color: #d6248f;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <img id="cat-image" src="cat_gun.gif" height="240" width="200" alt="Cat Image">
+    <div id="message"><i>The no button is just for visuals</i></div>
+    <div id="options">
+        <a class="btn btn-no" href="#" onclick="moveRandomly()">NO</a>
+        <a class="btn btn-yes" href="yes.html">YES</a>
+    </div>
+
+    <script>
+        function moveRandomly() {
+            var button = document.querySelector('.btn-no');
+            var randomX = Math.floor(Math.random() * window.innerWidth);
+            var randomY = Math.floor(Math.random() * window.innerHeight);
+
+            button.style.position = 'absolute';
+            button.style.top = randomY + 'px';
+            button.style.left = randomX + 'px';
+        }
+    </script>
+</body>
+</html>
